@@ -1,0 +1,50 @@
+#include <iostream>
+#include <Limits.h>
+
+using namespace std;
+
+int const iMAXROWS = 50;
+int const iMAXCOLS = 10;
+
+void GetValues (int iArr[iMAXROWS][iMAXCOLS], int &iRows, int &iColumns) {
+    
+    cin >> iRows;
+    cin >> iColumns;
+    
+    for (int i=0; i<iRows; i++){
+        for (int j=0; j<iColumns; j++) {
+            cin >> iArr[i][j];
+        }
+    }
+}
+
+void Display (int iArr[iMAXROWS][iMAXCOLS], int &iRows, int &iColumns) {
+    
+    int iMin = INT_MAX;
+    int iMax = INT_MIN;
+    
+    for (int i=0; i<iRows; i++){
+        for (int j=0; j<iColumns; j++) {
+            if (iArr[i][i] < iMin) {
+                iMin = iArr[i][j];
+            }
+            
+            if (iArr[i][j] > iMax) {
+                iMax = iArr[i][j];
+            }
+        }
+        cout << iMin << " " << iMax << endl;
+    }
+}
+
+int main() {
+    
+    int iArr[iMAXROWS][iMAXCOLS];
+    int iRows;
+    int iColumns;
+    
+    GetValues (iArr, iRows, iColumns); 
+    Display (iArr, iRows, iColumns);
+    
+    return 0;
+}

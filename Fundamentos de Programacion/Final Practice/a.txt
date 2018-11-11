@@ -1,0 +1,6 @@
+Esta es la practica
+
+Numero de Lineas = 6 
+Numero de Parrafos = 2 
+Numero de "de" repetidos = 5 
+Numero de N = 6

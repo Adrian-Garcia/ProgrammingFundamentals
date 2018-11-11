@@ -1,0 +1,13 @@
+#include <iostream>
+ 
+int main(int argc, char **argv)
+{
+    int a, b, c;
+    
+    std::cout << "Introduce los valores de a, b, c:\n";
+    std::cin >> a >> b >> c;
+    
+    std::cout << "a: " << a << " b: " << b << " c: " << c;
+    
+    return 0;
+}

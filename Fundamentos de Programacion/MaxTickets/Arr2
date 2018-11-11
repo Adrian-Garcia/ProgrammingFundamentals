@@ -1,0 +1,55 @@
+#include <iostream> 
+#include <limits.h>
+
+using  namespace std;
+
+/*
+iMat[]  Matrix
+iNR     Rows of the matrix
+iNC     Columns of the matrix
+*/
+
+int const iMAXCOLS = 10;
+int const iMAXROWS = 10;
+
+void GetValues (int iMat[][iMAXROWS], int &iNR, int &iNC) {
+    cin >> iNC;
+    cin >> iNR;
+    
+    for (int i=0; i<iNC; i++) {
+        for (int j=0; j<iNR; j++) {
+            cin >> iMat[i][j];
+        }
+    }
+}
+
+void Display (int iMat[][iMAXROWS], int &iNR, int &iNC) {
+    
+    int iMax = iMat[0][0];
+    int iIMax;
+    int iJMax;
+    
+    for (int i=0; i<iNC; i++) {
+        for (int j=0; j<iNR; j++) {
+            if(iMax < iMat [i][j]) {
+                iMax = iMat[i][j];
+                iIMax = i;
+                iJMax = j;
+            }
+        }
+    }
+    
+    cout << iIMax + 1 << " " << iJMax + 1;
+}
+
+int main () {
+    
+    int iMat[10][10];
+    int iNR;
+    int iNC;
+    
+    GetValues(iMat, iNR, iNC);
+    Display(iMat, iNR, iNC);
+    
+    return 0;
+}
